@@ -37,7 +37,7 @@
                     android:layout_marginLeft="20dp"
                     android:hint="A"
                     android:text="@{alpha.hurufBesar}"
-                    android:textSize="80dp"
+                    android:textSize="75dp"
                     android:textStyle="bold"
                     android:textColor="#ff0000"/>
 
@@ -46,8 +46,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:hint="a"
+                    android:layout_marginTop="20dp"
                     android:text="@{alpha.hurufkecil}"
-                    android:textSize="60dp"
+                    android:textSize="55dp"
                     android:textStyle="bold"
                     android:textColor="#ff0000"/>
 
@@ -59,13 +60,14 @@
 
                 <TextView
                     android:id="@+id/tv_namaPegawai"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:hint="Kata"
+                    android:layout_marginTop="30dp"
                     android:text="@{alpha.kata}"
                     android:textColor="#ff0000"
-                    android:textSize="35dp"
+                    android:textSize="32dp"
                     android:textStyle="bold" />
 
 

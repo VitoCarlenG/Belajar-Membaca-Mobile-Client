@@ -1,22 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/itm_home"
+        android:id="@+id/beranda"
         android:enabled="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="Beranda"/>
     <item
-        android:id="@+id/itm_baca"
+        android:id="@+id/baca"
         android:enabled="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/ic_baseline_menu_book_24"
         android:title="Baca"/>
     <item
-        android:id="@+id/itm_lokasi"
+        android:id="@+id/lokasi"
         android:enabled="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/ic_baseline_location_on_24"
         android:title="Lokasi"/>
     <item
-        android:id="@+id/itm_tentang"
+        android:id="@+id/tentang"
         android:enabled="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/ic_baseline_group_24"
         android:title="Tentang"/>
 </menu>

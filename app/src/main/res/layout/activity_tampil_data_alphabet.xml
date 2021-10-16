@@ -10,14 +10,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/at_alpha"
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="675dp"
         tools:listitem="@layout/recycler_view" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="475dp"
+        android:layout_marginTop="675dp"
+        android:background="#836fff"
         app:menu="@menu/navbar" />
 
 </RelativeLayout>

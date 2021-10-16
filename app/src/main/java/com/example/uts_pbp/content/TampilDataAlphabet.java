@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.uts_pbp.MainActivity;
 import com.example.uts_pbp.R;
+import com.example.uts_pbp.TentangActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -37,21 +38,25 @@ public class TampilDataAlphabet extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.itm_baca);
+        bottomNavigationView.setSelectedItemId(R.id.baca);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.itm_home:
+                    case R.id.beranda:
                         startActivity(new Intent(TampilDataAlphabet.this, MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.itm_baca:
+                    case R.id.baca:
+                        startActivity(new Intent(TampilDataAlphabet.this, TampilDataAlphabet.class));
+                        overridePendingTransition(0,0);
                         return true;
-                    case R.id.itm_lokasi:
+                    case R.id.lokasi:
                         return false;
-                    case R.id.itm_tentang:
-                        return false;
+                    case R.id.tentang:
+                        startActivity(new Intent(TampilDataAlphabet.this, TentangActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
                 return false;
             }

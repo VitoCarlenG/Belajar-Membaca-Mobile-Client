@@ -11,8 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.example.uts_pbp.preferences.UserPreferences;
 
 public class RedActivity extends AppCompatActivity {
+    private ImageView button_red;
+    private UserPreferences userPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,19 @@ public class RedActivity extends AppCompatActivity {
         ColorDrawable cd = new ColorDrawable(Color.parseColor("#ED1C1C"));
         actionBar.setBackgroundDrawable(cd);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        userPreferences=new UserPreferences(RedActivity.this);
+        button_red=findViewById(R.id.button_red);
+
+        checkPlay();
+
+        button_red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userPreferences.setPlay();
+                checkPlay();
+            }
+        });
     }
 
     @Override
@@ -44,5 +63,12 @@ public class RedActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void checkPlay() {
+        if(userPreferences.checkPlay()) {
+            startActivity(new Intent(RedActivity.this, MainActivity.class));
+            finish();
+        }
     }
 }
