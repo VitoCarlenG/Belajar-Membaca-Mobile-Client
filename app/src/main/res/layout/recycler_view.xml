@@ -1,73 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/kartu"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="alpha"
+            type="com.example.uts_pbp.content.DataAlphabet"/>
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="#ffffff"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/kartu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#ffffff"
+            android:layout_margin="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="A"
-                android:textSize="80dp"
-                android:textStyle="bold"
-                android:textColor="#ff0000"/>
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="a"
-                android:textSize="60dp"
-                android:textStyle="bold"
-                android:textColor="#ff0000"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:hint="A"
+                    android:text="@{alpha.hurufBesar}"
+                    android:textSize="80dp"
+                    android:textStyle="bold"
+                    android:textColor="#ff0000"/>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/apple" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:hint="a"
+                    android:text="@{alpha.hurufkecil}"
+                    android:textSize="60dp"
+                    android:textStyle="bold"
+                    android:textColor="#ff0000"/>
 
-            <TextView
-                android:id="@+id/tv_namaPegawai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Apel"
-                android:textColor="#ff0000"
-                android:textSize="35dp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    profileImage="@{alpha.imgURL}"/>
+
+                <TextView
+                    android:id="@+id/tv_namaPegawai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:hint="Kata"
+                    android:text="@{alpha.kata}"
+                    android:textColor="#ff0000"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="675dp"
-        android:background="#836fff"
-        android:foregroundGravity="bottom"
-        app:menu="@menu/navbar" />
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

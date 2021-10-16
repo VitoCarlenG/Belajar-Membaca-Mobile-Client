@@ -1,21 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/itm_home"
         android:enabled="true"
         android:icon="@drawable/logo"
         android:title="Beranda"/>
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/itm_baca"
         android:enabled="true"
         android:icon="@drawable/logo"
         android:title="Baca"/>
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/itm_lokasi"
         android:enabled="true"
         android:icon="@drawable/logo"
         android:title="Lokasi"/>
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/itm_tentang"
         android:enabled="true"
         android:icon="@drawable/logo"
         android:title="Tentang"/>
