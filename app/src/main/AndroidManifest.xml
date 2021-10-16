@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UTS_PBP">
         <activity
+            android:name=".GreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RedActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".BlueActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

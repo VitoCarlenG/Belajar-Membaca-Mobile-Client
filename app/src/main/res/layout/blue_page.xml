@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ImageView
@@ -14,13 +15,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Belajar Membaca Apps"
-        android:textSize="30dp"
-        android:textColor="#0000ff"
+        android:text="@string/belajar_membaca_apps"
+        android:textSize="30sp"
+        android:textColor="@color/theme_blue"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"/>
 
     <ImageView
+        android:id="@+id/button_blue"
         android:layout_width="159dp"
         android:layout_height="255dp"
         android:layout_marginTop="35dp"
