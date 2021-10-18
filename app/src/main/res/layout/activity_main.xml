@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,8 +48,24 @@
             android:paddingRight="30dp"
             android:paddingBottom="15dp"
             android:text="Back to Lobby Screen"
-            app:cornerRadius="30dp" />
+            app:cornerRadius="30dp"
+             />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btntes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="15dp"
+        android:text="Back to Lobby Screen"
+        app:cornerRadius="30dp"
+        android:onClick="sendOnChannel1" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

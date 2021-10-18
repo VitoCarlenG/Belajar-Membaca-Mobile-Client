@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "108907536312",
+    "project_id": "uts-pbp-ee740",
+    "storage_bucket": "uts-pbp-ee740.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108907536312:android:58c8a001d13d2af31eb94d",
+        "android_client_info": {
+          "package_name": "com.example.uts_pbp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108907536312-mttgq7c7bt10jqmu7ron277pmohibo4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2KWS5boAkMWr5aKNie--mtvO7EhxLC-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108907536312-mttgq7c7bt10jqmu7ron277pmohibo4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

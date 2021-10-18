@@ -1,8 +1,13 @@
 package com.example.uts_pbp;
 
+import static com.example.uts_pbp.NotificationActivity.CHANNEL_1_ID;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,10 +21,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
     private UserPreferences userPreferences;
     private MaterialButton btnBack;
-
+    private NotificationManagerCompat notificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
         userPreferences=new UserPreferences(MainActivity.this);
         btnBack=findViewById(R.id.btnBack);
 
+
         checkPlay();
+
+        notificationManager = NotificationManagerCompat.from(this);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +70,17 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void sendOnChannel1(View v) {
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_baseline_group_24)
+                .setContentTitle("Babaii!!!")
+                .setContentText("Sampai Jumpa Lagi")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .build();
+
+        notificationManager.notify(1,notification);
     }
 
     private void checkPlay() {
