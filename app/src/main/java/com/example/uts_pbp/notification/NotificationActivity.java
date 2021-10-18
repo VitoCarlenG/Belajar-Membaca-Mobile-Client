@@ -12,7 +12,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 public class NotificationActivity extends Application {
     public static final String CHANNEL_1_ID = "channel1";
 
-    @RequiresApi(api=Build.VERSION_CODES.O)
     @Override
     public void onCreate() {
         super.onCreate();
@@ -21,7 +20,6 @@ public class NotificationActivity extends Application {
         createNotificationChannel();
     }
 
-    @RequiresApi(api=Build.VERSION_CODES.O)
     private void createNotificationChannel() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 = new NotificationChannel(

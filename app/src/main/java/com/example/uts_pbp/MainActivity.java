@@ -12,10 +12,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.uts_pbp.content.TampilDataAlphabet;
+import com.example.uts_pbp.geolocation.GeoActivity;
 import com.example.uts_pbp.preferences.UserPreferences;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
@@ -31,17 +31,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        notificationManager = NotificationManagerCompat.from(this);
+
         userPreferences=new UserPreferences(MainActivity.this);
         btnBack=findViewById(R.id.btnBack);
 
-
         checkPlay();
 
-        notificationManager = NotificationManagerCompat.from(this);
-
         btnBack.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                sendOnChannel1(view);
                 userPreferences.logout();
                 Toast.makeText(MainActivity.this, "Sampai Jumpa Lagi!!!", Toast.LENGTH_SHORT).show();
                 checkPlay();
@@ -61,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.lokasi:
-                        return false;
+                        startActivity(new Intent(MainActivity.this, GeoActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.tentang:
                         startActivity(new Intent(MainActivity.this, TentangActivity.class));
                         overridePendingTransition(0, 0);
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOnChannel1(View v) {
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+        Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_baseline_group_24)
                 .setContentTitle("Babaii!!!")
                 .setContentText("Sampai Jumpa Lagi")

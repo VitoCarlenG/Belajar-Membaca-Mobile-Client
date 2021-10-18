@@ -2,4 +2,7 @@
     <string name="app_name">UTS_PBP</string>
     <string name="membaca_adalah_napas_hidup_dan_jembatan_emas_ke_masa_depan">Membaca Adalah Napas Hidup dan Jembatan Emas ke Masa Depan</string>
     <string name="belajar_membaca_apps">Belajar Membaca Apps</string>
+    <string name="mapbox_access_token">pk.eyJ1Ijoidml0b2NhcmxlbmciLCJhIjoiY2t1azA3c2Z4MzMyaDJwcTZiN2Fya2FleSJ9.OqgqfXvbDjQTUp9yBOIyow</string>
+    <string name="user_location_permission_explanation">Apakah Diizinkan?</string>
+    <string name="user_location_permission_not_granted">Izin Ditolak!</string>
 </resources>

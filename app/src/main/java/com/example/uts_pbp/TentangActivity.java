@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.uts_pbp.content.TampilDataAlphabet;
+import com.example.uts_pbp.geolocation.GeoActivity;
 import com.example.uts_pbp.preferences.UserPreferences;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
@@ -37,7 +38,9 @@ public class TentangActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.lokasi:
-                        return false;
+                        startActivity(new Intent(TentangActivity.this, GeoActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.tentang:
                         startActivity(new Intent(TentangActivity.this, TentangActivity.class));
                         overridePendingTransition(0, 0);

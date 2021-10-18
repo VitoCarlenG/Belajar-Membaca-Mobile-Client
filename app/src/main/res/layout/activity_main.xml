@@ -48,8 +48,7 @@
             android:paddingRight="30dp"
             android:paddingBottom="15dp"
             android:text="Back to Lobby Screen"
-            app:cornerRadius="30dp"
-            android:onClick="sendOnChannel1" />
+            app:cornerRadius="30dp"/>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
