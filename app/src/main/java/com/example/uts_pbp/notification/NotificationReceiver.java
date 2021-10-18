@@ -1,4 +1,4 @@
-package com.example.uts_pbp;
+package com.example.uts_pbp.notification;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

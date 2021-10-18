@@ -1,6 +1,6 @@
 package com.example.uts_pbp;
 
-import static com.example.uts_pbp.NotificationActivity.CHANNEL_1_ID;
+import static com.example.uts_pbp.notification.NotificationActivity.CHANNEL_1_ID;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
