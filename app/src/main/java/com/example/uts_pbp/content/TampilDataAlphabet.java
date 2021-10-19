@@ -24,6 +24,7 @@ public class TampilDataAlphabet extends AppCompatActivity {
     private RecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

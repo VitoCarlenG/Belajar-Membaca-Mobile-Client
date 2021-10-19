@@ -1,8 +1,26 @@
 <resources>
-    <string name="app_name">UTS_PBP</string>
+    <string name="app_name">Belajar Membaca</string>
     <string name="membaca_adalah_napas_hidup_dan_jembatan_emas_ke_masa_depan">Membaca Adalah Napas Hidup dan Jembatan Emas ke Masa Depan</string>
     <string name="belajar_membaca_apps">Belajar Membaca Apps</string>
     <string name="mapbox_access_token">pk.eyJ1Ijoidml0b2NhcmxlbmciLCJhIjoiY2t1azA3c2Z4MzMyaDJwcTZiN2Fya2FleSJ9.OqgqfXvbDjQTUp9yBOIyow</string>
     <string name="user_location_permission_explanation">Apakah Diizinkan?</string>
     <string name="user_location_permission_not_granted">Izin Ditolak!</string>
+    <string name="back_to_lobby_screen">Back to Lobby Screen</string>
+    <string name="abesar">A</string>
+    <string name="akecil">a</string>
+    <string name="kata">Kata</string>
+    <string name="kelompok_4_pbp">Kelompok 4 PBP</string>
+    <string name="yudi_rico_napitupulu">Yudi Rico Napitupulu</string>
+    <string name="_190710075">190710075</string>
+    <string name="stevanus_tetuko_kristianto">Stevanus Tetuko Kristianto</string>
+    <string name="_190710167">190710167</string>
+    <string name="vito_carlen_giovanni">Vito Carlen Giovanni</string>
+    <string name="_190710181">190710181</string>
+    <string name="tema_merah">Tema Merah</string>
+    <string name="tema_hijau">Tema Hijau</string>
+    <string name="tema_biru">Tema Biru</string>
+    <string name="beranda">Beranda</string>
+    <string name="baca">Baca</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="tentang">Tentang</string>
 </resources>

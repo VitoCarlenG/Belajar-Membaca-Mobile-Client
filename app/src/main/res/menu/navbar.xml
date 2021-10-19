@@ -3,20 +3,20 @@
         android:id="@+id/beranda"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Beranda"/>
+        android:title="@string/beranda"/>
     <item
         android:id="@+id/baca"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_menu_book_24"
-        android:title="Baca"/>
+        android:title="@string/baca"/>
     <item
         android:id="@+id/lokasi"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Lokasi"/>
+        android:title="@string/lokasi"/>
     <item
         android:id="@+id/tentang"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_group_24"
-        android:title="Tentang"/>
+        android:title="@string/tentang"/>
 </menu>

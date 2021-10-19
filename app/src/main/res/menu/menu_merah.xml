@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/hijau"
-        android:title="Tema Hijau"/>
+        android:title="@string/tema_hijau"/>
     <item android:id="@+id/biru"
-        android:title="Tema Biru"/>
+        android:title="@string/tema_biru"/>
 </menu>

@@ -50,7 +50,7 @@
             android:paddingTop="15dp"
             android:paddingRight="30dp"
             android:paddingBottom="15dp"
-            android:text="Back to Lobby Screen"
+            android:text="@string/back_to_lobby_screen"
             app:cornerRadius="30dp" />
     </LinearLayout>
 

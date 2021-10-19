@@ -34,42 +34,42 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:hint="A"
+                    android:layout_marginStart="20dp"
+                    android:hint="@string/abesar"
                     android:text="@{alpha.hurufBesar}"
                     android:textColor="@color/theme_blue"
                     android:fontFamily="@font/baloo_tamma"
-                    android:textSize="75dp"
+                    android:textSize="75sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:hint="a"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/akecil"
                     android:fontFamily="@font/baloo_tamma"
                     android:layout_marginTop="20dp"
                     android:text="@{alpha.hurufkecil}"
-                    android:textSize="55dp"
+                    android:textSize="55sp"
                     android:textStyle="bold"
                     android:textColor="@color/theme_red"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     profileImage="@{alpha.imgURL}"/>
 
                 <TextView
                     android:id="@+id/tv_namaPegawai"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:hint="Kata"
+                    android:layout_marginStart="15dp"
+                    android:hint="@string/kata"
                     android:layout_marginTop="30dp"
                     android:text="@{alpha.kata}"
                     android:textColor="@color/theme_green"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:fontFamily="@font/baloo_tamma"
                     android:textStyle="bold" />
 

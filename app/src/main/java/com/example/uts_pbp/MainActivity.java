@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendOnChannel1(View v) {
         Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.ic_baseline_group_24)
+                .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Babaii!")
                 .setContentText("Sampai Jumpa Lagi!")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
