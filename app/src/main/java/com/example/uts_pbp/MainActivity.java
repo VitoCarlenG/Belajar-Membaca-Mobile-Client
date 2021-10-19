@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logokecil);
 
         notificationManager = NotificationManagerCompat.from(this);
 
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 sendOnChannel1(view);
                 userPreferences.logout();
-                Toast.makeText(MainActivity.this, "Sampai Jumpa Lagi!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Sampai Jumpa Lagi!", Toast.LENGTH_SHORT).show();
                 checkPlay();
             }
         });
@@ -78,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
     public void sendOnChannel1(View v) {
         Notification notification = new NotificationCompat.Builder(MainActivity.this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_baseline_group_24)
-                .setContentTitle("Babaii!!!")
-                .setContentText("Sampai Jumpa Lagi")
+                .setContentTitle("Babaii!")
+                .setContentText("Sampai Jumpa Lagi!")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .build();
 
@@ -90,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
         if (!userPreferences.checkPlay()) {
             startActivity(new Intent(MainActivity.this, BlueActivity.class));
             finish();
-        } else {
-            Toast.makeText(MainActivity.this, "Selamat Bermain!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

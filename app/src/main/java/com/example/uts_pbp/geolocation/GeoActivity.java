@@ -39,6 +39,8 @@ public class GeoActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
         setContentView(R.layout.activity_geolocation);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logokecil);
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);

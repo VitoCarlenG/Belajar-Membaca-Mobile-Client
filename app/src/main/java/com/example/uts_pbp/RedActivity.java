@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.uts_pbp.preferences.UserPreferences;
 
@@ -68,6 +69,7 @@ public class RedActivity extends AppCompatActivity {
     private void checkPlay() {
         if(userPreferences.checkPlay()) {
             startActivity(new Intent(RedActivity.this, MainActivity.class));
+            Toast.makeText(RedActivity.this, "Selamat Belajar!", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

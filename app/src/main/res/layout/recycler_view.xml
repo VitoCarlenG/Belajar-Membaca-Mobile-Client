@@ -37,20 +37,22 @@
                     android:layout_marginLeft="20dp"
                     android:hint="A"
                     android:text="@{alpha.hurufBesar}"
+                    android:textColor="@color/theme_blue"
+                    android:fontFamily="@font/baloo_tamma"
                     android:textSize="75dp"
-                    android:textStyle="bold"
-                    android:textColor="#ff0000"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:hint="a"
+                    android:fontFamily="@font/baloo_tamma"
                     android:layout_marginTop="20dp"
                     android:text="@{alpha.hurufkecil}"
                     android:textSize="55dp"
                     android:textStyle="bold"
-                    android:textColor="#ff0000"/>
+                    android:textColor="@color/theme_red"/>
 
                 <ImageView
                     android:layout_width="100dp"
@@ -66,8 +68,9 @@
                     android:hint="Kata"
                     android:layout_marginTop="30dp"
                     android:text="@{alpha.kata}"
-                    android:textColor="#ff0000"
+                    android:textColor="@color/theme_green"
                     android:textSize="32dp"
+                    android:fontFamily="@font/baloo_tamma"
                     android:textStyle="bold" />
 
 

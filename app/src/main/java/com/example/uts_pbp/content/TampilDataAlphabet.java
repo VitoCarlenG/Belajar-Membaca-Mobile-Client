@@ -28,6 +28,8 @@ public class TampilDataAlphabet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DataAlphabetList = new DaftarAlphabet().DataAlphabet;
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logokecil);
 
         //recyclerView
         setContentView(R.layout.activity_tampil_data_alphabet);

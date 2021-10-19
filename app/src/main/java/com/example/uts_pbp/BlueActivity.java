@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.uts_pbp.preferences.UserPreferences;
 
@@ -69,6 +70,7 @@ public class BlueActivity extends AppCompatActivity {
     private void checkPlay() {
         if(userPreferences.checkPlay()) {
             startActivity(new Intent(BlueActivity.this, MainActivity.class));
+            Toast.makeText(BlueActivity.this, "Selamat Belajar!", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

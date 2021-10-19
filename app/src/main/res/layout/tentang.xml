@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_tentang">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:background="#96abff"
+        android:background="#b9abf5"
         android:paddingLeft="50dp"
         android:paddingTop="20dp"
         android:paddingRight="50dp"
@@ -35,7 +36,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
+            android:background="#a694f2"
             android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
@@ -55,11 +56,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="Yudi Rico Napitupulu"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="190710075"
                     android:textStyle="bold"/>
 
@@ -71,7 +74,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
+            android:background="#a694f2"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:paddingTop="10dp"
@@ -92,11 +95,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="Stevanus Tetuko Kristianto"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="190710167"
                     android:textStyle="bold"/>
 
@@ -108,7 +113,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
+            android:background="#a694f2"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:paddingTop="10dp"
@@ -129,11 +134,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="Vito Carlen Giovanni"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="190710181"
                     android:textStyle="bold"/>
 
