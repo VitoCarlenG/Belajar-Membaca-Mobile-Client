@@ -10,13 +10,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="200dp"
         android:background="#b9abf5"
         android:paddingLeft="50dp"
         android:paddingTop="20dp"
         android:paddingRight="50dp"
         android:paddingBottom="20dp"
-        android:text="@string/kelompok_4_pbp"
+        android:text="Profil Pengguna"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28sp"
@@ -30,8 +30,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="250dp">
+        android:layout_marginTop="350dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,103 +54,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/yudi_rico_napitupulu"
+                    android:layout_marginTop="5dp"
+                    android:text="Username:"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Email:"
                     android:textColor="@color/white"
-                    android:text="@string/_190710075"
-                    android:textStyle="bold"/>
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#a694f2"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="66dp"
-                android:src="@drawable/ic_baseline_person_24" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/stevanus_tetuko_kristianto"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="@string/_190710167"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#a694f2"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="66dp"
-                android:src="@drawable/ic_baseline_person_24" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/vito_carlen_giovanni"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="@string/_190710181"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
 
         </LinearLayout>
 
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

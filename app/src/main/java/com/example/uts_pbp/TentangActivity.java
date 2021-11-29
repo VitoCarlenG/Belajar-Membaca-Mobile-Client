@@ -47,6 +47,10 @@ public class TentangActivity extends AppCompatActivity {
                         startActivity(new Intent(TentangActivity.this, TentangActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
+                    case R.id.latihan:
+                        startActivity(new Intent(TentangActivity.this, LatihanActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
                 return false;
             }
