@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.uts_pbp.LatihanActivity;
 import com.example.uts_pbp.MainActivity;
 import com.example.uts_pbp.R;
 import com.example.uts_pbp.TentangActivity;
@@ -61,6 +62,10 @@ public class TampilDataAlphabet extends AppCompatActivity {
                         return true;
                     case R.id.tentang:
                         startActivity(new Intent(TampilDataAlphabet.this, TentangActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.latihan:
+                        startActivity(new Intent(TampilDataAlphabet.this, LatihanActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }

@@ -3,6 +3,7 @@ package com.example.uts_pbp;
 import static com.android.volley.Request.Method.DELETE;
 import static com.android.volley.Request.Method.GET;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,6 +14,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -27,7 +29,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.uts_pbp.adapters.LatihanAdapter;
 import com.example.uts_pbp.api.LatihanApi;
+import com.example.uts_pbp.content.TampilDataAlphabet;
+import com.example.uts_pbp.geolocation.GeoActivity;
 import com.example.uts_pbp.model.LatihanResponse;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
@@ -52,6 +57,7 @@ public class LatihanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        BottomNavigationView bottomNavigationView;
 
         // Pendeklarasian request queue
         queue = Volley.newRequestQueue(this);
@@ -59,6 +65,37 @@ public class LatihanActivity extends AppCompatActivity {
         layoutLoading = findViewById(R.id.layout_loading);
         srLatihan = findViewById(R.id.sr_latihan);
         svLatihan = findViewById(R.id.sv_latihan);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.beranda);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.beranda:
+                        startActivity(new Intent(LatihanActivity.this, MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.baca:
+                        startActivity(new Intent(LatihanActivity.this, TampilDataAlphabet.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.lokasi:
+                        startActivity(new Intent(LatihanActivity.this, GeoActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.tentang:
+                        startActivity(new Intent(LatihanActivity.this, TentangActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.latihan:
+                        startActivity(new Intent(LatihanActivity.this, LatihanActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         srLatihan.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

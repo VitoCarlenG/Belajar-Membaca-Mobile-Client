@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.uts_pbp.LatihanActivity;
 import com.example.uts_pbp.MainActivity;
 import com.example.uts_pbp.R;
 import com.example.uts_pbp.TentangActivity;
@@ -66,6 +67,10 @@ public class GeoActivity extends AppCompatActivity implements OnMapReadyCallback
                         return true;
                     case R.id.tentang:
                         startActivity(new Intent(GeoActivity.this, TentangActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.latihan:
+                        startActivity(new Intent(GeoActivity.this, LatihanActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }
