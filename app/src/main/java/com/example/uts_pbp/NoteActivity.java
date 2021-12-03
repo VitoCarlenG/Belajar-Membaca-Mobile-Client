@@ -10,9 +10,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,6 +39,7 @@ import com.example.uts_pbp.adapters.NoteAdapter;
 
 import com.example.uts_pbp.api.NoteApi;
 
+import com.example.uts_pbp.model.Latihan;
 import com.example.uts_pbp.model.Note;
 import com.example.uts_pbp.model.NoteResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -46,7 +52,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NoteActivity extends AppCompatActivity {
+public class NoteActivity extends AppCompatActivity implements SensorEventListener {
 
     public static final int LAUNCH_ADD_ACTIVITY = 123;
 
@@ -55,6 +61,9 @@ public class NoteActivity extends AppCompatActivity {
     private SearchView svNote;
     private LinearLayout layoutLoading;
     private RequestQueue queue;
+
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +76,9 @@ public class NoteActivity extends AppCompatActivity {
         layoutLoading = findViewById(R.id.layout_loading);
         srNote = findViewById(R.id.sr_note);
         svNote = findViewById(R.id.sv_note);
+
+        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
         srNote.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -220,7 +232,33 @@ public class NoteActivity extends AppCompatActivity {
             layoutLoading.setVisibility(View.GONE);
         }
     }
+
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        mSensorManager.unregisterListener(this);
+    }
+
     @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        Sensor mySensor = sensorEvent.sensor;
+        if (mySensor.getType() == Sensor.TYPE_PROXIMITY) {
+            if (sensorEvent.values[0] == 0) {
+                startActivity(new Intent(NoteActivity.this, LatihanActivity.class));
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) { }
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = new MenuInflater(this);
         menuInflater.inflate(R.menu.menu_note_latihan,menu);
@@ -240,6 +278,5 @@ public class NoteActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
-    }
-
+    }*/
 }
