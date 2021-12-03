@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UTS_PBP">
         <activity
+            android:name=".NoteAddEditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NoteActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddEditActivity"
             android:exported="true" />
         <activity
