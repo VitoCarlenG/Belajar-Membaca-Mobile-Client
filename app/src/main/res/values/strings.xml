@@ -23,4 +23,11 @@
     <string name="baca">Baca</string>
     <string name="lokasi">Lokasi</string>
     <string name="tentang">Tentang</string>
+    <string name="loading">Loading...</string>
+    <string name="tambah_latihan">Tambah Latihan</string>
+    <string name="huruf_alphabet">Huruf Alfabet</string>
+    <string name="kata_benda">Kata Benda</string>
+    <string name="url_gambar">URL Gambar</string>
+    <string name="batal">Batal</string>
+    <string name="simpan">Simpan</string>
 </resources>

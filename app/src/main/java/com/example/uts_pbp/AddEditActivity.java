@@ -37,6 +37,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.uts_pbp.api.LatihanApi;
+import com.example.uts_pbp.geolocation.GeoActivity;
 import com.example.uts_pbp.model.Latihan;
 import com.example.uts_pbp.model.LatihanResponse;
 import com.google.gson.Gson;
@@ -51,14 +52,9 @@ import java.util.Map;
 
 public class AddEditActivity extends AppCompatActivity {
 
-    private static final int PERMISSION_REQUEST_CAMERA = 100;
-    private static final int CAMERA_REQUEST = 0;
-    private static final int GALLERY_PICTURE = 1;
-
     private EditText etNama, etHarga, etDeskripsi;
     private ImageView ivGambar;
     private LinearLayout layoutLoading;
-    private Bitmap bitmap = null;
     private RequestQueue queue;
 
     @Override
@@ -74,51 +70,6 @@ public class AddEditActivity extends AppCompatActivity {
         etHarga = findViewById(R.id.et_harga);
         etDeskripsi = findViewById(R.id.et_deskripsi);
         layoutLoading = findViewById(R.id.layout_loading);
-
-        ivGambar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LayoutInflater layoutInflater = LayoutInflater.from(AddEditActivity.this);
-                View selectMediaView = layoutInflater
-                        .inflate(R.layout.layout_select_media, null);
-
-                final AlertDialog alertDialog = new AlertDialog
-                        .Builder(selectMediaView.getContext()).create();
-
-                Button btnKamera = selectMediaView.findViewById(R.id.btn_kamera);
-                Button btnGaleri = selectMediaView.findViewById(R.id.btn_galeri);
-
-                btnKamera.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        if (checkSelfPermission(Manifest.permission.CAMERA) ==
-                                PackageManager.PERMISSION_DENIED) {
-                            String[] permission = {Manifest.permission.CAMERA};
-                            requestPermissions(permission, PERMISSION_REQUEST_CAMERA);
-                        } else {
-                            // Membuka kamera
-                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                            startActivityForResult(intent, CAMERA_REQUEST);
-                        }
-
-                        alertDialog.dismiss();
-                    }
-                });
-
-                btnGaleri.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        // Membuka galeri
-                        Intent intent = new Intent(Intent.ACTION_PICK,
-                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        startActivityForResult(intent, GALLERY_PICTURE);
-
-                        alertDialog.dismiss();
-                    }
-                });
-
-                alertDialog.setView(selectMediaView);
-                alertDialog.show();
-            }
-        });
 
         Button btnCancel = findViewById(R.id.btn_cancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -154,81 +105,6 @@ public class AddEditActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == PERMISSION_REQUEST_CAMERA) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Membuka kamera
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, CAMERA_REQUEST);
-            } else {
-                Toast.makeText(AddEditActivity.this, "Permission denied.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (data == null)
-            return;
-
-        if (resultCode == RESULT_OK && requestCode == GALLERY_PICTURE) {
-            Uri selectedImage = data.getData();
-
-            try {
-                InputStream inputStream = getContentResolver().openInputStream(selectedImage);
-                bitmap = BitmapFactory.decodeStream(inputStream);
-            } catch (Exception e) {
-                Toast.makeText(AddEditActivity.this, e.getMessage(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        } else if (resultCode == RESULT_OK && requestCode == CAMERA_REQUEST) {
-            bitmap = (Bitmap) data.getExtras().get("data");
-        }
-
-        bitmap = getResizedBitmap(bitmap, 512);
-        ivGambar.setImageBitmap(bitmap);
-    }
-
-    private Bitmap getResizedBitmap(Bitmap bitmap, int maxSize) {
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-
-        float bitmapRatio = (float) width / (float) height;
-
-        if (bitmapRatio > 1) {
-            width = maxSize;
-            height = (int) (width / bitmapRatio);
-        } else {
-            height = maxSize;
-            width = (int) (height * bitmapRatio);
-        }
-
-        return Bitmap.createScaledBitmap(bitmap, width, height, true);
-    }
-
-    private String bitmapToBase64(Bitmap bitmap) {
-        // TODO: Tambahkan fungsi untuk mengkonversi bitmap dengan output Base64 string hasil
-        //  konversi. Gunakan fungsi ini saat menambah atau mengedit data produk.
-
-        if(bitmap!=null){
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-            byte[] byteArray = byteArrayOutputStream .toByteArray();
-            String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
-            return encoded;
-
-        }else{
-            return null;
-        }
-    }
-
     private void getProdukById(long id) {
         // TODO: Tambahkan fungsi untuk menampilkan data buku berdasarkan id.
         //  (hint: gunakan Glide untuk load gambar)
@@ -245,12 +121,12 @@ public class AddEditActivity extends AppCompatActivity {
 
                 Latihan latihan = latihanResponse.getLatihanList().get(0);
                 etNama.setText(latihan.getAlfabet());
+                etHarga.setText(latihan.getNama());
                 etDeskripsi.setText(latihan.getUrlgambar());
                 Glide.with(ivGambar)
                         .load(latihan.getUrlgambar())
                         .placeholder(R.drawable.tanpagambar)
                         .into(ivGambar);
-                etHarga.setText(latihan.getNama());
 
                 Toast.makeText(AddEditActivity.this, latihanResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 setLoading(false);

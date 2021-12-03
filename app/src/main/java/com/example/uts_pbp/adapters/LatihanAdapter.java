@@ -68,7 +68,7 @@ public class LatihanAdapter extends RecyclerView.Adapter<LatihanAdapter.ViewHold
                 MaterialAlertDialogBuilder materialAlertDialogBuilder =
                         new MaterialAlertDialogBuilder(context);
                 materialAlertDialogBuilder.setTitle("Konfirmasi")
-                        .setMessage("Apakah anda yakin ingin menghapus data Latihan ini?")
+                        .setMessage("Apakah anda yakin ingin menghapus data latihan ini?")
                         .setNegativeButton("Batal", null)
                         .setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                             @Override
@@ -87,8 +87,8 @@ public class LatihanAdapter extends RecyclerView.Adapter<LatihanAdapter.ViewHold
                 Intent i = new Intent(context, AddEditActivity.class);
                 i.putExtra("id", latihan.getId());
 
-                if (context instanceof MainActivity)
-                    ((MainActivity) context).startActivityForResult(i, LatihanActivity.LAUNCH_ADD_ACTIVITY);
+                if (context instanceof LatihanActivity)
+                    ((LatihanActivity) context).startActivityForResult(i, LatihanActivity.LAUNCH_ADD_ACTIVITY);
             }
         });
     }

@@ -52,12 +52,12 @@ public class LatihanActivity extends AppCompatActivity {
     private SearchView svLatihan;
     private LinearLayout layoutLoading;
     private RequestQueue queue;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        BottomNavigationView bottomNavigationView;
+        setContentView(R.layout.activity_latihan);
 
         // Pendeklarasian request queue
         queue = Volley.newRequestQueue(this);
@@ -67,7 +67,7 @@ public class LatihanActivity extends AppCompatActivity {
         svLatihan = findViewById(R.id.sv_latihan);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.beranda);
+        bottomNavigationView.setSelectedItemId(R.id.latihan);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -249,7 +249,4 @@ public class LatihanActivity extends AppCompatActivity {
             layoutLoading.setVisibility(View.GONE);
         }
     }
-
-
-
 }

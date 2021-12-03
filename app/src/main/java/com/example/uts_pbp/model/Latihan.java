@@ -1,5 +1,7 @@
 package com.example.uts_pbp.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Latihan {
     private Long id;
     private String alfabet;

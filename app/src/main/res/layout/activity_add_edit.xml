@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Tambah Latihan" />
+                android:text="@string/tambah_latihan" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_gambar"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:hint="Huruf Alphabet">
+                android:hint="@string/huruf_alphabet">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_nama"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:hint="Kata Benda">
+                android:hint="@string/kata_benda">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_harga"
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:hint="URL GAMBAR">
+                android:hint="@string/url_gambar">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_deskripsi"
@@ -126,14 +126,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Batal" />
+            android:text="@string/batal" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Simpan" />
+            android:text="@string/simpan" />
 
     </LinearLayout>
 
