@@ -28,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="12dp"
+            android:background="#dbdbdb">
 
             <TextView
                 android:id="@+id/tv_huruf"
@@ -37,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@string/huruf_alphabet" />
+                android:text="@string/huruf_alphabet"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"

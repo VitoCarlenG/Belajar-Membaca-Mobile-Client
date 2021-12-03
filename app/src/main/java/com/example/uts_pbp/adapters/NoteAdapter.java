@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.uts_pbp.AddEditActivity;
 import com.example.uts_pbp.LatihanActivity;
 import com.example.uts_pbp.NoteActivity;
+import com.example.uts_pbp.NoteAddEditActivity;
 import com.example.uts_pbp.R;
 import com.example.uts_pbp.model.Latihan;
 import com.example.uts_pbp.model.Note;
@@ -78,7 +79,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>
         holder.cvProduk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, AddEditActivity.class);
+                Intent i = new Intent(context, NoteAddEditActivity.class);
                 i.putExtra("id", note.getId());
 
                 if (context instanceof NoteActivity)

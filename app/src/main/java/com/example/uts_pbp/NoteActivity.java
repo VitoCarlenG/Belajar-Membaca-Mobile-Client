@@ -3,6 +3,7 @@ package com.example.uts_pbp;
 import static com.android.volley.Request.Method.DELETE;
 import static com.android.volley.Request.Method.GET;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,6 +14,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -25,11 +29,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.uts_pbp.adapters.LatihanAdapter;
+
 import com.example.uts_pbp.adapters.NoteAdapter;
-import com.example.uts_pbp.api.LatihanApi;
+
 import com.example.uts_pbp.api.NoteApi;
-import com.example.uts_pbp.model.LatihanResponse;
+
 import com.example.uts_pbp.model.Note;
 import com.example.uts_pbp.model.NoteResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -61,8 +65,8 @@ public class NoteActivity extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
 
         layoutLoading = findViewById(R.id.layout_loading);
-        srNote = findViewById(R.id.sr_latihan);
-        svNote = findViewById(R.id.sv_latihan);
+        srNote = findViewById(R.id.sr_note);
+        svNote = findViewById(R.id.sv_note);
 
         srNote.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -216,4 +220,26 @@ public class NoteActivity extends AppCompatActivity {
             layoutLoading.setVisibility(View.GONE);
         }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = new MenuInflater(this);
+        menuInflater.inflate(R.menu.menu_note_latihan,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.note){
+            startActivity(new Intent(NoteActivity.this, NoteActivity.class));
+            overridePendingTransition(0, 0);
+            finish();
+        }else {
+            startActivity(new Intent(NoteActivity.this, LatihanActivity.class));
+            overridePendingTransition(0, 0);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
