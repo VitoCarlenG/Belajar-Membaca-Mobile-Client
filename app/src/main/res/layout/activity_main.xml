@@ -51,7 +51,8 @@
             android:paddingRight="30dp"
             android:paddingBottom="15dp"
             android:text="@string/back_to_lobby_screen"
-            app:cornerRadius="30dp" />
+            app:cornerRadius="30dp"
+            android:backgroundTint="#836fff"/>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -16,7 +16,7 @@
         android:paddingTop="20dp"
         android:paddingRight="50dp"
         android:paddingBottom="20dp"
-        android:text="Profil Pengguna"
+        android:text="@string/profile_pengguna"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28sp"
@@ -70,7 +70,22 @@
 
             </LinearLayout>
 
+
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="15dp"
+            android:text="@string/edit_profile"
+            app:cornerRadius="30dp"
+            android:backgroundTint="#836fff"/>
 
     </LinearLayout>
 

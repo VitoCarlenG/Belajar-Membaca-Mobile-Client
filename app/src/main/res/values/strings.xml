@@ -30,4 +30,9 @@
     <string name="url_gambar">URL Gambar</string>
     <string name="batal">Batal</string>
     <string name="simpan">Simpan</string>
+    <string name="profile_pengguna">Profile Pengguna</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="isi_pesan">Isi Pesan</string>
+    <string name="title_pesan">Title Pesan</string>
+    <string name="latihan">Latihan</string>
 </resources>
