@@ -8,7 +8,7 @@
     <data>
         <variable
             name="alpha"
-            type="com.example.uts_pbp.content.DataAlphabet"/>
+            type="com.example.uas_pbp.content.DataAlphabet"/>
     </data>
 
     <RelativeLayout
