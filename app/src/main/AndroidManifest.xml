@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.uas_pbp">
+    package="com.example.uts_pbp">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.example.uas_pbp.notification.NotificationActivity"
+        android:name="com.example.uts_pbp.notification.NotificationActivity"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,37 +15,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UTS_PBP">
         <activity
-            android:name="com.example.uas_pbp.NoteAddEditActivity"
+            android:name="com.example.uts_pbp.NoteAddEditActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.NoteActivity"
+            android:name="com.example.uts_pbp.NoteActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.AddEditActivity"
+            android:name="com.example.uts_pbp.AddEditActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.LatihanActivity"
+            android:name="com.example.uts_pbp.LatihanActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.geolocation.GeoActivity"
+            android:name="com.example.uts_pbp.geolocation.GeoActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.TentangActivity"
+            android:name="com.example.uts_pbp.TentangActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.content.TampilDataAlphabet"
+            android:name="com.example.uts_pbp.content.TampilDataAlphabet"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.GreenActivity"
+            android:name="com.example.uts_pbp.GreenActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.RedActivity"
+            android:name="com.example.uts_pbp.RedActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.MainActivity"
+            android:name="com.example.uts_pbp.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uas_pbp.BlueActivity"
+            android:name="com.example.uts_pbp.BlueActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +54,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.example.uas_pbp.notification.NotificationReceiver" />
+        <receiver android:name="com.example.uts_pbp.notification.NotificationReceiver" />
 
         <meta-data
             android:name="preloaded_fonts"
